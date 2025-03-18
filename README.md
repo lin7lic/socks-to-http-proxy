@@ -14,10 +14,13 @@ It uses hyper library HTTP proxy [example](https://github.com/hyperium/hyper/blo
 
 Follow these instructions to compile
 
-1.  Ensure you have current version of `cargo` and [Rust](https://www.rust-lang.org) installed
-2.  Clone the project `$ git clone https://github.com/KaranGauswami/socks-to-http-proxy.git && cd socks-to-http-proxy`
-3.  Build the project `$ cargo build --release`
-4.  Once complete, the binary will be located at `target/release/sthp`
+1.  Ensure you have current version of `cargo` and [Rust](https://www.rust-lang.org) installed `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+2.  Add env `source $HOME/.cargo/env`
+3.  Clone the project `$ git clone https://github.com/KaranGauswami/socks-to-http-proxy.git && cd socks-to-http-proxy`
+4.  Build the project `$ cargo build --release`
+5.  Once complete, the binary will be located at `target/release/sthp`
+6.  Windows Binary `rustup target add x86_64-pc-windows-gnu`
+7.  Compile Windows Binary `cargo build --release --target x86_64-pc-windows-gnu`
 
 ## Usage
 
@@ -29,6 +32,10 @@ This will create proxy server on 8080 and use localhost:1080 as a Socks5 Proxy
 
 ```bash
 sthp -p 8080 -s example.com:8080
+```
+
+```bash
+.\sthp.exe -p 9080 -s ip:8080 -u uname -P pwd
 ```
 
 This will create proxy server on 8080 and use example:1080 as a Socks5 Proxy
